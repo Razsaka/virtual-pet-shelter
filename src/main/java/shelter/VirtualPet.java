@@ -4,24 +4,27 @@ public class VirtualPet {
 
     private String petName;
     private String petType;
-    private static int hunger;
+    private int hunger;
     private int thirst;
     private int fatigue;
-    private int admit;
+    private int boredom;
 
 
-    public VirtualPet() {
+    public VirtualPet(String petName, String petType, int hunger, int thirst, int fatigue, int boredom) {
 
-        this.petName=petName;
-        this.petType=petType;
-        this.hunger=hunger;
-        this.thirst= thirst;
-        this.fatigue= fatigue;
-        this.admit= admit;
+        this.petName = petName;
+        this.petType = petType;
+        this.hunger = hunger;
+        this.thirst = thirst;
+        this.fatigue = fatigue;
+        this.boredom = boredom;
+
     }
+
     public String getPetName() {
         return petName;
     }
+
     public String getPetType() {
         return petType;
     }
@@ -38,39 +41,41 @@ public class VirtualPet {
         return fatigue;
     }
 
-    public int getAdmit() {
-        return admit;
+    public int getBoredom() {
+        return boredom;
     }
+
 
     public void tick() {
         hunger++;
         thirst++;
         fatigue++;
+        boredom++;
     }
 
     public void feedPet() {
-        hunger = hunger -10;
+        hunger = hunger - hunger;
         thirst++;
         fatigue++;
     }
-    public void giveWater(){
-        thirst= thirst - 6;
+
+    public void giveWater() {
+        thirst = thirst - thirst;
         hunger++;
         fatigue++;
     }
+
     public void sleep() {
-        fatigue = fatigue -15;
+        fatigue = fatigue - fatigue;
         hunger++;
-        fatigue++;
-    }
-
-    public void setAdmit() {
-        admit= admit -2;
-        hunger++;
-        fatigue++;
+        thirst++;
+        boredom++;
     }
 
 
-
-
+    public void playWith() {
+        boredom=boredom-boredom;
+        hunger++;
+        thirst++;
+    }
 }

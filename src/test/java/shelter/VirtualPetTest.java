@@ -1,38 +1,48 @@
 package shelter;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VirtualPetTest {
 
-    VirtualPet underTest = new VirtualPet();
-    @Test
-    public void ThatSizeReturnOneAfterAdopted(){
-       VirtualPet pet1 = new VirtualPet();
-              int check1 = pet1.getAdmit();
-       assertEquals(0, check1);
 
+    VirtualPet underTest = new VirtualPet("Bob","Dragon", 5,5,5,5);
 
     @Test
-    public void ThatPetsHungerReturnZeroAfterFeeding(5){
-        VirtualPet pet = new VirtualPet();
-        int check2 = pet.getHunger();
-        assertEquals(0, check1);
-
+    public void shouldFeedPet(){
+        underTest.feedPet();
+        assertEquals(0,underTest.getHunger());
     }
 
     @Test
-    public void ThatPetsThirstReturnZeroAfterFeeding(){
-        VirtualPet pet = new VirtualPet();
-        int check2 = pet.getThirst();
-        assertEquals(0, check1);
+    public void shouldGiveWater() {
+        underTest.giveWater();
+        assertEquals(0,underTest.getThirst());
 
     }
 
-    private void assertEquals(int i, int check1) {
+    @Test
+    public void shouldPetToSleep() {
+        underTest.sleep();
+        assertEquals(0,underTest.getFatigue());
+
+
     }
+    @Test void shouldPlayWithAPet() {
+        underTest. playWith();
+        assertEquals(0,underTest.getBoredom());
 
-
-}
-
-    private void assertEquals(int i, int check1) {
     }
+//    @Test
+//    public void shouldAddAPet() {
+//        underTest.admitPet();
+//        assertEquals(1,underTest.getAdmit());
+
+        }
+//    }
+
+
+
+
+
+
